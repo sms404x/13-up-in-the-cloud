@@ -1,7 +1,7 @@
 # Task 13 – Up in the Clouds  
 ## Path A – Own Cloud Account  
 
-## 1. Cloud Environment Details  
+## Step-1: Cloud Environment Details  
 
 Cloud Provider: Microsoft Azure  
 Subscription: Azure subscription 1  
@@ -40,7 +40,7 @@ Public Inbound Ports Enabled at Creation:
 - HTTP (80)  
 - HTTPS (443)  
 
-## 2. Virtual Machine Deployment  
+## Step-2: Virtual Machine Deployment  
 
 ### Steps Performed  
 
@@ -61,7 +61,7 @@ VM Public IP:
 
 20.193.252.**
 
-## 3. Network Security Configuration  
+## Step-3: Network Security Configuration  
 
 ### Inbound NSG Rules Configured  
 
@@ -73,9 +73,9 @@ ICMP | N/A | Ping Testing
 
 These rules ensure secure administrative access and web hosting capability.  
 
-## 4. Connectivity Validation  
+## Step-4: Connectivity Validation  
 
-### 4.1 Inbound Connectivity Test (Ping from Kali)  
+### Step-4.1: Inbound Connectivity Test (Ping from Kali)  
 
 From Kali Linux:  
 
@@ -88,7 +88,7 @@ Ping test succeeded, confirming inbound connectivity.
 Evidence:  
 screenshot-1-kali-ping-vm.png  
 
-### 4.2 SSH Access Verification  
+### Step-4.2: SSH Access Verification  
 
 From Kali Linux:  
 
@@ -105,7 +105,7 @@ This confirmed proper IP assignment and network configuration.
 Evidence:  
 screenshot-2-ssh-ip-a.png  
 
-### 4.3 Outbound Connectivity Test  
+### Step-4.3: Outbound Connectivity Test  
 
 Checked public IP on Kali:  
 
@@ -122,9 +122,9 @@ This confirms that outbound connectivity from the Azure VM is functioning correc
 Evidence:  
 screenshot-3-vm-ping-my-public-ip.png  
 
-## 5. Web Server Deployment (Port 80 Hosting)  
+## Step-5: Web Server Deployment (Port 80 Hosting)  
 
-### 5.1 Nginx Installation  
+### Step-5.1: Nginx Installation  
 
 Inside the VM:  
 
@@ -136,7 +136,7 @@ Started and enabled Nginx:
 sudo systemctl start nginx  
 sudo systemctl enable nginx  
 
-### 5.2 HTTP Access Configuration  
+### Step-5.2: HTTP Access Configuration  
 
 Inbound rule for TCP 80 was already enabled during VM creation.  
 
@@ -161,7 +161,7 @@ The webpage loaded successfully, confirming:
 Evidence:  
 screenshot-4-browser-http-vm.png  
 
-## 6. Resource Cleanup and Decommissioning  
+## Step-6: Resource Cleanup and Decommissioning  
 
 After validation:  
 
