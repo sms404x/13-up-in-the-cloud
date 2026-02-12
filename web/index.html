@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DICT-TERM</title>
+</head>
+
+<body bgcolor="black" text="#00ff00">
+
+<pre id="output">
+DICT-TERM v1.0
+-----------------------
+system online
+type a word and press ENTER
+
+</pre>
+
+<form onsubmit="lookup(); return false;">
+  $ <input
+      type="text"
+      id="word"
+      autofocus
+      size="40"
+      style="background:black;color:#00ff00;border:none;outline:none;font-family:monospace;"
+    >
+</form>
+
+<script>
+function lookup() {
+  const word = document.getElementById("word").value.trim();
+  const output = document.getElementById("output");
+
+  if (!word) return;
+
+  output.innerText += "\n$ lookup " + word + "\n";
+
+  fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + word)
+    .then(res => res.json())
+    .then(data => {
+      const def = data[0].meanings[0].definitions[0].definition;
+      output.innerText += "> meaning: " + def + "\n";
+    })
+    .catch(() => {
+      output.innerText += "> error: word not found\n";
+    });
+
+  document.getElementById("word").value = "";
+}
+</script>
+
+</body>
+</html>
