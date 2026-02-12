@@ -16,5 +16,11 @@ This folder contains visual evidence of the Azure VM deployment, connectivity va
 
 - **screenshot-4-browser-http-vm.png**  
   Web server (Nginx) successfully accessed via public IP in browser
-
+  
+- **ssh-using-key.png**  
+  SSH to the VM using Private Key
+  
+- **server.png**  
+  Web server (Nginx) successfully started
+  
 These screenshots provide verification of deployment, network configuration, connectivity validation, and web hosting functionality.
